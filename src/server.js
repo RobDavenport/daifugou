@@ -5,7 +5,7 @@ const hbs = require('hbs');
 const port = process.env.PORT || 8080;
 
 //Define paths for Express config
-const publicPath = path.join(__dirname, '../public');
+const publicPath = path.join(__dirname, '../dist');
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
