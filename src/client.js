@@ -11,7 +11,13 @@ let app = new PIXI.Application({
     resolution: 1,
 });
 
-var client = new Colyseus.Client('ws://localhost:2567');
+var client = new Colyseus.Client('ws://localhost:8081');
+client.joinOrCreate('standard', {}).then(room => {
+    console.log("joined room: ", room.name)
+}).catch(e => {
+    console.log("join error", e)
+});
+
 
 document.body.appendChild(app.view);
 app.renderer.backgroundColor = 0x56BB56;
